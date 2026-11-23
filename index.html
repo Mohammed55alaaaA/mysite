@@ -1,0 +1,85 @@
+
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>200 درس | محمد إلى العلا</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:white;margin:0}
+header{background:#facc15;color:black;text-align:center;padding:20px;position:sticky;top:0;z-index:10}
+header h1{margin:0;font-size:24px}
+.search{margin:15px}
+.search input{width:100%;padding:15px;border-radius:15px;border:none;font-size:18px;text-align:center}
+.card{background:white;color:black;margin:15px;padding:15px;border-radius:20px}
+.card h2{color:#2563eb}
+.ex{background:#eef2ff;padding:12px;border-radius:12px;margin-top:10px;line-height:2}
+.btn{background:#16a34a;color:white;border:none;padding:10px 15px;border-radius:10px;margin:5px;font-size:16px}
+.cat{background:#facc15;color:black;padding:3px 10px;border-radius:20px;font-size:13px}
+footer{text-align:center;padding:15px;color:#facc15}
+</style>
+</head>
+<body>
+<header>
+<h1>🔥 200 درس انجليزي 🔥</h1>
+<p>حقوق محمد (إلى العلا) © 2026</p>
+<p id="count">جاري تحميل الدروس...</p>
+</header>
+<div class="search">
+<input id="s" onkeyup="mySearch()" placeholder="🔍 اكتب اسم الدرس... should / ماضي / كلمة / فعل">
+</div>
+<div id="all"></div>
+<footer><b>حقوق محمد (إلى العلا) - كل الحقوق محفوظة</b></footer>
+<script>
+function speak(t){let u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.8;speechSynthesis.speak(u)}
+let lessons=[];
+
+// 1. دروس Should - 40 درس
+let shouldVerbs=[["study hard","تذاكر بجد"],["sleep early","تنام مبكرا"],["help your parents","تساعد والديك"],["drink water","تشرب الماء"],["do your homework","تعمل واجبك"],["respect your teacher","تحترم معلمك"],["eat healthy food","تأكل أكل صحي"],["read books","تقرأ كتب"],["be honest","تكون صادق"],["listen to your mother","تسمع كلام أمك"],["go to school","تذهب للمدرسة"],["save money","توفر قروش"],["pray every day","تصلي كل يوم"],["be kind","تكون لطيف"],["work hard","تشتغل بجد"],["learn English","تتعلم انجليزي"],["keep your room clean","تنظف غرفتك"],["arrive early","تصل مبكرا"],["say the truth","تقول الحقيقة"],["take care of yourself","تهتم بنفسك"]];
+for(let i=0;i<shouldVerbs.length;i++){
+lessons.push({cat:"Should - النصيحة",title:"درس Should رقم "+(i+1)+" : You should "+shouldVerbs[i][0],body:"<b>القاعدة:</b> You + Should + فعل بدون إضافة<br><b>الشرح:</b> دي نصيحة، يعني المفروض تعمل كده عشان مصلحتك.<br><br><b>المثال:</b><br>You should "+shouldVerbs[i][0]+".<br>يجب أن "+shouldVerbs[i][1]+".<br><b>مثال تاني:</b><br>He should "+shouldVerbs[i][0]+".<br>يجب أن "+shouldVerbs[i][1]+".<br><br><b>تمرين:</b> ترجم: يجب أن "+shouldVerbs[i][1]+"<br>الحل: You should "+shouldVerbs[i][0]+".<br><b>غلطة شائعة:</b> ما تقول should "+shouldVerbs[i][0].split(' ')[0]+"s ❌",en:"You should "+shouldVerbs[i][0]});
+lessons.push({cat:"Shouldn't - المنع",title:"درس Shouldn't رقم "+(i+1)+" : You shouldn't "+shouldVerbs[i][0],body:"<b>القاعدة:</b> You + Shouldn't + فعل<br><b>الشرح:</b> دي نصيحة بالمنع، يعني ما المفروض تعمل الحاجة دي.<br><br><b>المثال:</b><br>You shouldn't waste your time.<br>ما المفروض تضيع وقتك.<br><br>She shouldn't "+shouldVerbs[i][0]+".<br>ما المفروض "+shouldVerbs[i][1]+".",en:"You should not "+shouldVerbs[i][0]});
+}
+
+// 2. دروس كلمات - 80 درس
+let words=[["book","كتاب"],["pen","قلم"],["school","مدرسة"],["teacher","معلم"],["student","طالب"],["house","بيت"],["water","موية"],["food","أكل"],["mother","أم"],["father","أب"],["friend","صديق"],["doctor","دكتور"],["car","عربية"],["phone","تلفون"],["sun","شمس"],["moon","قمر"],["dog","كلب"],["cat","قطة"],["bird","طائر"],["fish","سمكة"],["tree","شجرة"],["flower","وردة"],["door","باب"],["window","شباك"],["table","طاولة"],["chair","كرسي"],["bed","سرير"],["shirt","قميص"],["shoes","جزمة"],["money","قروش"],["time","وقت"],["day","يوم"],["night","ليل"],["morning","صباح"],["evening","مساء"],["market","سوق"],["hospital","مستشفى"],["road","شارع"],["river","نهر"],["sea","بحر"],["mountain","جبل"]];
+for(let i=0;i<words.length;i++){
+lessons.push({cat:"كلمات - Vocabulary",title:"كلمة رقم "+(i+1)+" : "+words[i][0]+" = "+words[i][1],body:"<b>الكلمة:</b> "+words[i][0]+"<br><b>المعنى:</b> "+words[i][1]+"<br><br><b>مثال في جملة:</b><br>This is a "+words[i][0]+".<br>هذا "+words[i][1]+".<br><br>I like my "+words[i][0]+".<br>أنا أحب "+words[i][1]+".<br><br><b>جمع الكلمة:</b> "+words[i][0]+"s<br><b>تمرين:</b> قول الكلمة 3 مرات بصوت عالي.",en:words[i][0]});
+lessons.push({cat:"جملة - Sentence",title:"جملة رقم "+(i+1)+" : I have a "+words[i][0],body:"<b>الشرح:</b> دي جملة ملكية، I have = أنا عندي<br><br><b>الجملة:</b><br>I have a "+words[i][0]+".<br>أنا عندي "+words[i][1]+".<br><br>Do you have a "+words[i][0]+"?<br>هل عندك "+words[i][1]+"؟<br><br><b>الجواب:</b> Yes, I do. / No, I don't.",en:"I have a "+words[i][0]});
+}
+
+// 3. دروس أفعال - 40 درس
+let verbs=[["play","يلعب"],["read","يقرأ"],["write","يكتب"],["run","يجري"],["eat","يأكل"],["drink","يشرب"],["sleep","ينام"],["go","يذهب"],["come","يأتي"],["speak","يتكلم"],["listen","يستمع"],["watch","يشاهد"],["study","يذاكر"],["work","يعمل"],["help","يساعد"],["love","يحب"],["like","يحب"],["want","يريد"],["need","يحتاج"],["open","يفتح"]];
+for(let i=0;i<verbs.length;i++){
+lessons.push({cat:"أفعال - Verbs",title:"فعل رقم "+(i+1)+" : "+verbs[i][0]+" = "+verbs[i][1],body:"<b>الفعل:</b> "+verbs[i][0]+" = "+verbs[i][1]+"<br><br><b>مضارع:</b> He "+verbs[i][0]+"s every day.<br>هو "+verbs[i][1]+" كل يوم.<br><br><b>ماضي:</b> He "+verbs[i][0]+"ed yesterday.<br>هو "+verbs[i][1]+" أمس.<br><br><b>مستمر:</b> He is "+verbs[i][0]+"ing now.<br>هو "+verbs[i][1]+" الآن.",en:"He "+verbs[i][0]+"s every day"});
+lessons.push({cat:"سؤال - Question",title:"سؤال رقم "+(i+1)+" : Do you "+verbs[i][0]+"?",body:"<b>السؤال:</b><br>Do you "+verbs[i][0]+"?<br>هل أنت "+verbs[i][1]+"؟<br><br><b>الجواب:</b><br>Yes, I do. نعم<br>No, I don't. لا<br><br><b>مثال:</b><br>Can you "+verbs[i][0]+"?<br>هل تستطيع أن "+verbs[i][1]+"؟",en:"Do you "+verbs[i][0]});
+}
+
+// 4. دروس قواعد - 40 درس
+let grammar=[["المضارع البسيط","He plays football.","هو يلعب كرة قدم"],["الماضي البسيط","I played yesterday.","لعبت أمس"],["المضارع المستمر","I am studying now.","أنا أذاكر الآن"],["المستقبل Will","I will study tomorrow.","سأذاكر غدا"],["المقارنة","He is taller than me.","هو أطول مني"],["الملكية","This is my book.","هذا كتابي"],["الجمع","Two books.","كتابان"],["النفي","I don't like tea.","أنا لا أحب الشاي"],["السؤال Wh","Where are you?","أين أنت؟"],["حروف الجر","in the morning","في الصباح"]];
+for(let i=0;i<grammar.length;i++){
+for(let j=1;j<=4;j++){
+lessons.push({cat:"قواعد - Grammar",title:"قاعدة "+grammar[i][0]+" - جزء "+j,body:"<b>الدرس:</b> "+grammar[i][0]+"<br><b>القاعدة:</b> راجع الشرح الأساسي + التمرين رقم "+j+"<br><br><b>المثال الرئيسي:</b><br>"+grammar[i][1]+"<br>"+grammar[i][2]+"<br><br><b>تمرين "+j+":</b> كون جملة بنفس القاعدة باستخدام كلمة مختلفة.<br><b>نصيحة:</b> اكتب الجملة في كراسك 3 مرات واحفظها.",en:grammar[i][1]});
+}
+}
+
+let box=document.getElementById('all');
+document.getElementById('count').innerText="عندك الآن "+lessons.length+" درس 🔥 اكتب في البحث وجيب درسك";
+lessons.forEach((L,idx)=>{
+let d=document.createElement('div');
+d.className='card lesson';
+d.innerHTML='<span class="cat">'+L.cat+'</span><h2>'+(idx+1)+'. '+L.title+'</h2><div class="ex">'+L.body+'<br><button class="btn" onclick="speak(\''+L.en.replace(/'/g,"")+'\')">🔊 اسمع النطق</button></div>';
+box.appendChild(d);
+});
+function mySearch(){
+let v=document.getElementById('s').value.toLowerCase();
+let cards=document.getElementsByClassName('lesson');
+for(let i=0;i<cards.length;i++){
+let txt=cards[i].innerText.toLowerCase();
+if(txt.includes(v)){cards[i].style.display='block'}else{cards[i].style.display='none'}
+}
+}
+</script>
+</body>
+</html>
+<link rel="manifest" href="manifest.json">
+
